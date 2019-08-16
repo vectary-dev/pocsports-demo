@@ -10,21 +10,20 @@ async function run() {
     async function onReady() {
         console.log("API ready..");
 
-        try {            
-            const changeTexture = async (texture) => {
-                const object = await vctrApi.getObjectByName("BicycleHelmet");
-                await vctrApi.updateMaterial(object.material, texture);
-            }
+        try {
+            const object = await vctrApi.getObjectByName("BicycleHelmet");
+            const blackTexture = { "name": "black", "map": "./Black&Lable.jpg" }
+            const blueTexture = { "name": "blue", "map": "./Blue&Lable.jpg" }
+            const blackMaterial = await vctrApi.createMaterial(blackTexture, object.material);
+            const blueMaterial = await vctrApi.createMaterial(blueTexture, object.material);
 
             console.log(await vctrApi.getObjects());
             document.getElementById("whiteColor").addEventListener("click", () => {
-                const texture = { "map": "./Black&Lable.jpg" }
-                changeTexture(texture);
+                vctrApi.setMaterial(object.name, blackMaterial.name);
             });
 
             document.getElementById("blueColor").addEventListener("click", () => {
-                const texture = { "map": "./Blue&Lable.jpg" }
-                changeTexture(texture);
+                vctrApi.setMaterial(object.name, blueMaterial.name);
             });
 
         } catch (e) {
