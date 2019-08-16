@@ -1,0 +1,15 @@
+{
+  "name": "pocsports-demo",
+  "version": "1.0.0",
+  "description": "POC sports",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve",
+    "lint": "eslint scripts/**/*",
+    "serve": "http-server . -c-1 -p 4141"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "dependencies": {}
+}
