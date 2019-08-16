@@ -10428,7 +10428,13 @@ footer {
       .pdp-main#pdpMain .product-detail .product-variations ul li.attribute .swatches img {
         width: 40px;
         height: 40px;
-        border-radius: 50%; }
+        border-radius: 50%;
+        cursor: pointer; }
+      .pdp-main#pdpMain .product-detail .product-variations ul li.attribute .swatches .disabled img {
+        opacity:0.1;
+        cursor: none;
+      }
+
       .pdp-main#pdpMain .product-detail .product-variations ul li.attribute .swatches .select {
         padding: 0px;
         margin: 0;
