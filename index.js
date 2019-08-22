@@ -13,49 +13,41 @@ async function run() {
         try {
             const object = await vctrApi.getObjectByName("BicycleHelmet");
 
-            const whiteTexture = { "name": "white", "map": "./white.jpg" }
-            const darkRedTexture = { "name": "darkRed", "map": "./darkred.jpg" }
-            const pinkTexture = { "name": "pink", "map": "./pink.jpg" }
-            const greenTexture = { "name": "green", "map": "./green.jpg" }
-            const blueTexture = { "name": "blue", "map": "./blue.jpg" }
-            const orangeTexture = { "name": "orange", "map": "./orange.jpg" }
-            const redTexture = { "name": "red", "map": "./red.jpg" }
-
-            const whiteMaterial = await vctrApi.createMaterial(whiteTexture, object.material);
-            const darkRedMaterial = await vctrApi.createMaterial(darkRedTexture, object.material);
-            const pinkMaterial = await vctrApi.createMaterial(pinkTexture, object.material);
-            const greenMaterial = await vctrApi.createMaterial(greenTexture, object.material);
-            const blueMaterial = await vctrApi.createMaterial(blueTexture, object.material);
-            const orangeMaterial = await vctrApi.createMaterial(orangeTexture, object.material);
-            const redMaterial = await vctrApi.createMaterial(redTexture, object.material);
+            const whiteTexture = { "map": "./white.jpg" }
+            const darkRedTexture = { "map": "./darkred.jpg" }
+            const pinkTexture = { "map": "./pink.jpg" }
+            const greenTexture = { "map": "./green.jpg" }
+            const blueTexture = { "map": "./blue.jpg" }
+            const orangeTexture = { "map": "./orange.jpg" }
+            const redTexture = { "map": "./red.jpg" }
 
             console.log(await vctrApi.getObjects());
             document.getElementById("whiteColor").addEventListener("click", () => {
-                vctrApi.setMaterial(object.name, whiteMaterial.name);
+                vctrApi.updateMaterial(object.material, whiteTexture);
             });
 
             document.getElementById("darkRedColor").addEventListener("click", () => {
-              vctrApi.setMaterial(object.name, darkRedMaterial.name);
+              vctrApi.updateMaterial(object.material, darkRedTexture);
             });
 
             document.getElementById("pinkColor").addEventListener("click", () => {
-              vctrApi.setMaterial(object.name, pinkMaterial.name);
+              vctrApi.updateMaterial(object.material, pinkTexture);
             });
 
             document.getElementById("greenColor").addEventListener("click", () => {
-              vctrApi.setMaterial(object.name, greenMaterial.name);
+              vctrApi.updateMaterial(object.material, greenTexture);
             });
 
             document.getElementById("blueColor").addEventListener("click", () => {
-                vctrApi.setMaterial(object.name, blueMaterial.name);
+                vctrApi.updateMaterial(object.material, blueTexture);
             });
 
             document.getElementById("orangeColor").addEventListener("click", () => {
-              vctrApi.setMaterial(object.name, orangeMaterial.name);
+              vctrApi.updateMaterial(object.material, orangeTexture);
             });
 
             document.getElementById("redColor").addEventListener("click", () => {
-                vctrApi.setMaterial(object.name, redMaterial.name);
+                vctrApi.updateMaterial(object.material, redTexture);
             });
 
         } catch (e) {
