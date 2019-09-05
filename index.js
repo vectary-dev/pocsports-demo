@@ -1,4 +1,4 @@
-import { VctrApi } from "https://www.vectary.com/embed/viewer/v1/scripts/api/api.js";
+import { VctrApi } from "https://www.vectary.com/viewer-api/v1/api.js";
 
 async function run() {
     console.log("Example script running..");
