@@ -11,43 +11,60 @@ async function run() {
         console.log("API ready..");
 
         try {
-            const object = await vctrApi.getObjectByName("BicycleHelmet");
+            const object = await vctrApi.getObjectByName("Outside");
+            const insideObject = await vctrApi.getObjectByName("Inside");
+            const logoObject = await vctrApi.getObjectByName("Logos");
 
-            const whiteTexture = { "map": "./white.jpg" }
-            const darkRedTexture = { "map": "./darkred.jpg" }
-            const pinkTexture = { "map": "./pink.jpg" }
-            const greenTexture = { "map": "./green.jpg" }
-            const blueTexture = { "map": "./blue.jpg" }
-            const orangeTexture = { "map": "./orange.jpg" }
-            const redTexture = { "map": "./red.jpg" }
+            const blackColor = { "color": "#000000" }
+            const whiteColor = { "color": "#eff8f9" }
+            const darkRedColor = { "color": "#c02739" }
+            const pinkColor = { "color": "#b33a8b" }
+            const greenColor = { "color": "#8fb92d" }
+            const blueColor = { "color": "#253b64" }
+            const orangeColor = { "color": "#ff8f63" }
+            const redColor = { "color": "#fe5136" }
 
             console.log(await vctrApi.getObjects());
             document.getElementById("whiteColor").addEventListener("click", () => {
-                vctrApi.updateMaterial(object.material, whiteTexture);
+                vctrApi.updateMaterial(object.material, whiteColor);
+                vctrApi.updateMaterial(insideObject.material, blackColor);
+                vctrApi.updateMaterial(logoObject.material, blueColor);
             });
 
             document.getElementById("darkRedColor").addEventListener("click", () => {
-              vctrApi.updateMaterial(object.material, darkRedTexture);
+                vctrApi.updateMaterial(object.material, darkRedColor);
+                vctrApi.updateMaterial(insideObject.material, blackColor);
+                vctrApi.updateMaterial(logoObject.material, whiteColor);
             });
 
             document.getElementById("pinkColor").addEventListener("click", () => {
-              vctrApi.updateMaterial(object.material, pinkTexture);
+                vctrApi.updateMaterial(object.material, pinkColor);
+                vctrApi.updateMaterial(insideObject.material, blackColor);
+                vctrApi.updateMaterial(logoObject.material, whiteColor);
             });
 
             document.getElementById("greenColor").addEventListener("click", () => {
-              vctrApi.updateMaterial(object.material, greenTexture);
+                vctrApi.updateMaterial(object.material, greenColor);
+                vctrApi.updateMaterial(insideObject.material, whiteColor);
+                vctrApi.updateMaterial(logoObject.material, whiteColor);
             });
 
             document.getElementById("blueColor").addEventListener("click", () => {
-                vctrApi.updateMaterial(object.material, blueTexture);
+                vctrApi.updateMaterial(object.material, blueColor);
+                vctrApi.updateMaterial(insideObject.material, blackColor);
+                vctrApi.updateMaterial(logoObject.material, whiteColor);
             });
 
             document.getElementById("orangeColor").addEventListener("click", () => {
-              vctrApi.updateMaterial(object.material, orangeTexture);
+                vctrApi.updateMaterial(object.material, orangeColor);
+                vctrApi.updateMaterial(insideObject.material, whiteColor);
+                vctrApi.updateMaterial(logoObject.material, whiteColor);
             });
 
             document.getElementById("redColor").addEventListener("click", () => {
-                vctrApi.updateMaterial(object.material, redTexture);
+                vctrApi.updateMaterial(object.material, redColor);
+                vctrApi.updateMaterial(insideObject.material, blackColor);
+                vctrApi.updateMaterial(logoObject.material, whiteColor);
             });
 
         } catch (e) {
